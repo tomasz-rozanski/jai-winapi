@@ -1,0 +1,12 @@
+windows.jai 
+|
+----------------------> winapifamily.jai ✅
+|                       |
+                        -> winpackagefamily.jai ✅
+|
+-> sdkddkver.jai ✅
+|
+|
+----------------------> winresrc.jai
+                        |
+                        -> winuser_rh.jai
