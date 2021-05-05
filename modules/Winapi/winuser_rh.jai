@@ -8,6 +8,8 @@
 //     This module defines the 32-Bit Windows resource codes from winuser.jai.
 // 
 
+#assert(OS == .WINDOWS);
+
 #load "winapifamily.jai";
 
 RT_MANIFEST                                        :: 24;
@@ -655,39 +657,39 @@ WM_MBUTTONDOWN                 :: 0x0207;
 WM_MBUTTONUP                   :: 0x0208;
 WM_MBUTTONDBLCLK               :: 0x0209;
 
-#if (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400)
-    #define WM_MOUSEWHEEL                   0x020A
-#endif
+if (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400) {
+    WM_MOUSEWHEEL                  :: 0x020A;
+}
 
-#if (_WIN32_WINNT >= 0x0500)
-    #define WM_XBUTTONDOWN                  0x020B
-    #define WM_XBUTTONUP                    0x020C
-    #define WM_XBUTTONDBLCLK                0x020D
-#endif
+if (_WIN32_WINNT >= 0x0500) {
+    WM_XBUTTONDOWN                 :: 0x020B;
+    WM_XBUTTONUP                   :: 0x020C;
+    WM_XBUTTONDBLCLK               :: 0x020D;
+}
 
-#if (_WIN32_WINNT >= 0x0600)
-    #define WM_MOUSEHWHEEL                  0x020E
-#endif
+if (_WIN32_WINNT >= 0x0600) {
+    WM_MOUSEHWHEEL                 :: 0x020E;
+}
 
-#if (_WIN32_WINNT >= 0x0600)
-    #define WM_MOUSELAST                    0x020E
-#elif (_WIN32_WINNT >= 0x0500)
-    #define WM_MOUSELAST                    0x020D
-#elif (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400)
-    #define WM_MOUSELAST                    0x020A
-#else
-    #define WM_MOUSELAST                    0x0209
-#endif /* (_WIN32_WINNT >= 0x0600) */
+if (_WIN32_WINNT >= 0x0600) {
+    WM_MOUSELAST                   :: 0x020E;
+} else if (_WIN32_WINNT >= 0x0500) {
+    WM_MOUSELAST                   :: 0x020D;
+} else if (_WIN32_WINNT >= 0x0400) || (_WIN32_WINDOWS > 0x0400) {
+    WM_MOUSELAST                   :: 0x020A;
+} else {
+    WM_MOUSELAST                   :: 0x0209;
+} /* (_WIN32_WINNT >= 0x0600) */
 
 
-#if(_WIN32_WINNT >= 0x0400)
+if (_WIN32_WINNT >= 0x0400) {
 /* Value for rolling one detent */
-    #define WHEEL_DELTA                     120
-    #define GET_WHEEL_DELTA_WPARAM(wParam)  ((short)HIWORD(wParam))
+WHEEL_DELTA                    :: 120;
+    GET_WHEEL_DELTA_WPARAM(wParam)  ((short)HIWORD(wParam))
 
 /* Setting to scroll one page for SPI_GET/SETWHEELSCROLLLINES */
-    #define WHEEL_PAGESCROLL                (UINT_MAX)
-#endif /* _WIN32_WINNT >= 0x0400 */
+    WHEEL_PAGESCROLL               :: (UINT_MAX);
+} /* _WIN32_WINNT >= 0x0400 */
 
 #if(_WIN32_WINNT >= 0x0500)
     #define GET_KEYSTATE_WPARAM(wParam)     (LOWORD(wParam))

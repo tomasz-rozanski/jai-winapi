@@ -8,7 +8,7 @@
 //     Setup module for Windows applications.
 //
 
-#assert (OS == .WINDOWS);
+#assert(OS == .WINDOWS);
 
 #module_parameters () (
     __cplusplus := false,

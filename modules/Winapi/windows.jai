@@ -22,7 +22,6 @@
 
             #load "winresrc.jai";
 
-
         } else {
 
             if defined(RC_INVOKED) {
