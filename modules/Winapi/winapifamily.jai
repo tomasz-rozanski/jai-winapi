@@ -45,6 +45,8 @@ WINAPI_FAMILY_APP :: WINAPI_FAMILY_PC_APP;
 
 #run define_winapi_partition(*WINAPI_PARTITION_SYSTEM, WINAPI_FAMILY_SYSTEM, WINAPI_FAMILY_SERVER);
 
+WINAPI_FAMILY_PARTITION :: Partitions => Partitions;
+
 _WINAPI_DEPRECATED_DECLARATION :: #string DONE
 #deprecated "This API cannot be used in the context of the caller's application type."
 DONE

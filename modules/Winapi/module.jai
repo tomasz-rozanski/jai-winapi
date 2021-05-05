@@ -131,4 +131,3 @@ define_winapi_partition :: (partition: *bool, reqs: ..int) {
     << partition = result;
 }
 
-WINAPI_FAMILY_PARTITION :: x => x;
