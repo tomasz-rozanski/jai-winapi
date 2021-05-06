@@ -9,7 +9,7 @@ windows.jai
 |
 ----------------------> winresrc.jai *
                         |
-                        ----------------------> winuser_rh.jai *
+                        ----------------------------> winuser_rh.jai *
                         |
                         -> commctrl_rh.jai ✅
                         |
@@ -19,7 +19,12 @@ windows.jai
                         |
                         -> dlgs.jai ✅
                         |
-                        -> winver.jai *
+                        -----------------------------> winver.jai ✅
+                                                       |
+                                                       -> specstrings.jai -
+                                                       |
+                                                       -> verrsrc.jai -
+
 
 
 
