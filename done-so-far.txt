@@ -1,29 +1,29 @@
 windows.jai 
 |
-----------------------> winapifamily.jai ✅
+├---------------------> winapifamily.jai ✅
 |                       |
-                        -> winpackagefamily.jai ✅
+|                       └> winpackagefamily.jai ✅
 |
--> sdkddkver.jai ✅
+├> sdkddkver.jai ✅
 |
 |
-----------------------> winresrc.jai *
+└---------------------> winresrc.jai *
                         |
-                        ----------------------------> winuser_rh.jai *
+                        ├-> winuser_rh.jai ✅
                         |
-                        -> commctrl_rh.jai ✅
+                        ├-> commctrl_rh.jai ✅
                         |
-                        -> dde_rh.jai ✅
+                        ├-> dde_rh.jai ✅
                         |
-                        -> winnt_rh.jai ✅
+                        ├-> winnt_rh.jai ✅
                         |
-                        -> dlgs.jai ✅
+                        ├-> dlgs.jai ✅
                         |
-                        -----------------------------> winver.jai ✅
+                        └----------------------------> winver.jai ✅
                                                        |
-                                                       -> specstrings.jai *
+                                                       ├-> specstrings.jai *
                                                        |
-                                                       -> verrsrc.jai ✅
+                                                       └-> verrsrc.jai ✅
 
 
 

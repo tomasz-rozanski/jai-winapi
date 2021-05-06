@@ -1047,27 +1047,27 @@ if (_WIN32_WINNT >= 0x0400) {
 /*
  * Window Styles
  */
- WS_OVERLAPPED      :: 0x00000000L;
- WS_POPUP           :: 0x80000000L;
- WS_CHILD           :: 0x40000000L;
- WS_MINIMIZE        :: 0x20000000L;
- WS_VISIBLE         :: 0x10000000L;
- WS_DISABLED        :: 0x08000000L;
- WS_CLIPSIBLINGS    :: 0x04000000L;
- WS_CLIPCHILDREN    :: 0x02000000L;
- WS_MAXIMIZE        :: 0x01000000L;
- WS_CAPTION         :: 0x00C00000L;     /* WS_BORDER | WS_DLGFRAME  */
- WS_BORDER          :: 0x00800000L;
- WS_DLGFRAME        :: 0x00400000L;
- WS_VSCROLL         :: 0x00200000L;
- WS_HSCROLL         :: 0x00100000L;
- WS_SYSMENU         :: 0x00080000L;
- WS_THICKFRAME      :: 0x00040000L;
- WS_GROUP           :: 0x00020000L;
- WS_TABSTOP         :: 0x00010000L;
+ WS_OVERLAPPED      :: 0x00000000;
+ WS_POPUP           :: 0x80000000;
+ WS_CHILD           :: 0x40000000;
+ WS_MINIMIZE        :: 0x20000000;
+ WS_VISIBLE         :: 0x10000000;
+ WS_DISABLED        :: 0x08000000;
+ WS_CLIPSIBLINGS    :: 0x04000000;
+ WS_CLIPCHILDREN    :: 0x02000000;
+ WS_MAXIMIZE        :: 0x01000000;
+ WS_CAPTION         :: 0x00C00000;     /* WS_BORDER | WS_DLGFRAME  */
+ WS_BORDER          :: 0x00800000;
+ WS_DLGFRAME        :: 0x00400000;
+ WS_VSCROLL         :: 0x00200000;
+ WS_HSCROLL         :: 0x00100000;
+ WS_SYSMENU         :: 0x00080000;
+ WS_THICKFRAME      :: 0x00040000;
+ WS_GROUP           :: 0x00020000;
+ WS_TABSTOP         :: 0x00010000;
 
- WS_MINIMIZEBOX     :: 0x00020000L;
- WS_MAXIMIZEBOX     :: 0x00010000L;
+ WS_MINIMIZEBOX     :: 0x00020000;
+ WS_MAXIMIZEBOX     :: 0x00010000;
 
 
  WS_TILED           :: WS_OVERLAPPED;
@@ -1088,31 +1088,31 @@ WS_CHILDWINDOW     :: (WS_CHILD);
 /*
  * Extended Window Styles
  */
- WS_EX_DLGMODALFRAME    :: 0x00000001L;
- WS_EX_NOPARENTNOTIFY   :: 0x00000004L;
- WS_EX_TOPMOST          :: 0x00000008L;
- WS_EX_ACCEPTFILES      :: 0x00000010L;
- WS_EX_TRANSPARENT      :: 0x00000020L;
+ WS_EX_DLGMODALFRAME    :: 0x00000001;
+ WS_EX_NOPARENTNOTIFY   :: 0x00000004;
+ WS_EX_TOPMOST          :: 0x00000008;
+ WS_EX_ACCEPTFILES      :: 0x00000010;
+ WS_EX_TRANSPARENT      :: 0x00000020;
 if (WINVER >= 0x0400) {
-    WS_EX_MDICHILD         :: 0x00000040L;
-    WS_EX_TOOLWINDOW       :: 0x00000080L;
-    WS_EX_WINDOWEDGE       :: 0x00000100L;
-    WS_EX_CLIENTEDGE       :: 0x00000200L;
-    WS_EX_CONTEXTHELP      :: 0x00000400L;
+    WS_EX_MDICHILD         :: 0x00000040;
+    WS_EX_TOOLWINDOW       :: 0x00000080;
+    WS_EX_WINDOWEDGE       :: 0x00000100;
+    WS_EX_CLIENTEDGE       :: 0x00000200;
+    WS_EX_CONTEXTHELP      :: 0x00000400;
 
 } /* WINVER >= 0x0400 */
 if (WINVER >= 0x0400) {
 
-    WS_EX_RIGHT            :: 0x00001000L;
-    WS_EX_LEFT             :: 0x00000000L;
-    WS_EX_RTLREADING       :: 0x00002000L;
-    WS_EX_LTRREADING       :: 0x00000000L;
-    WS_EX_LEFTSCROLLBAR    :: 0x00004000L;
-    WS_EX_RIGHTSCROLLBAR   :: 0x00000000L;
+    WS_EX_RIGHT            :: 0x00001000;
+    WS_EX_LEFT             :: 0x00000000;
+    WS_EX_RTLREADING       :: 0x00002000;
+    WS_EX_LTRREADING       :: 0x00000000;
+    WS_EX_LEFTSCROLLBAR    :: 0x00004000;
+    WS_EX_RIGHTSCROLLBAR   :: 0x00000000;
 
-    WS_EX_CONTROLPARENT    :: 0x00010000L;
-    WS_EX_STATICEDGE       :: 0x00020000L;
-    WS_EX_APPWINDOW        :: 0x00040000L;
+    WS_EX_CONTROLPARENT    :: 0x00010000;
+    WS_EX_STATICEDGE       :: 0x00020000;
+    WS_EX_APPWINDOW        :: 0x00040000;
 
 
     WS_EX_OVERLAPPEDWINDOW :: (WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE);
@@ -1127,22 +1127,22 @@ if (_WIN32_WINNT >= 0x0500) {
 
 
 if (WINVER >= 0x0500) {
-    WS_EX_NOINHERITLAYOUT  :: 0x00100000L; // Disable inheritence of mirroring by children
+    WS_EX_NOINHERITLAYOUT  :: 0x00100000; // Disable inheritence of mirroring by children
 } /* WINVER >= 0x0500 */
 
 if (WINVER >= 0x0602) {
-    WS_EX_NOREDIRECTIONBITMAP:: 0x00200000L;
+    WS_EX_NOREDIRECTIONBITMAP:: 0x00200000;
 } /* WINVER >= 0x0602 */
 
 if (WINVER >= 0x0500) {
-    WS_EX_LAYOUTRTL        :: 0x00400000L; // Right to left mirroring
+    WS_EX_LAYOUTRTL        :: 0x00400000; // Right to left mirroring
 } /* WINVER >= 0x0500 */
 
 if (_WIN32_WINNT >= 0x0501) {
-    WS_EX_COMPOSITED       :: 0x02000000L;
+    WS_EX_COMPOSITED       :: 0x02000000;
 } /* _WIN32_WINNT >= 0x0501 */
 if (_WIN32_WINNT >= 0x0500) {
-    WS_EX_NOACTIVATE       :: 0x08000000L;
+    WS_EX_NOACTIVATE       :: 0x08000000;
 } /* _WIN32_WINNT >= 0x0500 */
 
 
@@ -1225,48 +1225,48 @@ CF_DSPENHMETAFILE  :: 0x008E;
 /*
  * Menu flags for Add/Check/EnableMenuItem()
  */
- MF_INSERT          :: 0x00000000L;
- MF_CHANGE          :: 0x00000080L;
- MF_APPEND          :: 0x00000100L;
- MF_DELETE          :: 0x00000200L;
- MF_REMOVE          :: 0x00001000L;
+ MF_INSERT          :: 0x00000000;
+ MF_CHANGE          :: 0x00000080;
+ MF_APPEND          :: 0x00000100;
+ MF_DELETE          :: 0x00000200;
+ MF_REMOVE          :: 0x00001000;
 
- MF_BYCOMMAND       :: 0x00000000L;
- MF_BYPOSITION      :: 0x00000400L;
+ MF_BYCOMMAND       :: 0x00000000;
+ MF_BYPOSITION      :: 0x00000400;
 
- MF_SEPARATOR       :: 0x00000800L;
+ MF_SEPARATOR       :: 0x00000800;
 
- MF_ENABLED         :: 0x00000000L;
- MF_GRAYED          :: 0x00000001L;
- MF_DISABLED        :: 0x00000002L;
+ MF_ENABLED         :: 0x00000000;
+ MF_GRAYED          :: 0x00000001;
+ MF_DISABLED        :: 0x00000002;
 
- MF_UNCHECKED       :: 0x00000000L;
- MF_CHECKED         :: 0x00000008L;
- MF_USECHECKBITMAPS :: 0x00000200L;
+ MF_UNCHECKED       :: 0x00000000;
+ MF_CHECKED         :: 0x00000008;
+ MF_USECHECKBITMAPS :: 0x00000200;
 
- MF_STRING          :: 0x00000000L;
- MF_BITMAP          :: 0x00000004L;
- MF_OWNERDRAW       :: 0x00000100L;
+ MF_STRING          :: 0x00000000;
+ MF_BITMAP          :: 0x00000004;
+ MF_OWNERDRAW       :: 0x00000100;
 
- MF_POPUP           :: 0x00000010L;
- MF_MENUBARBREAK    :: 0x00000020L;
- MF_MENUBREAK       :: 0x00000040L;
+ MF_POPUP           :: 0x00000010;
+ MF_MENUBARBREAK    :: 0x00000020;
+ MF_MENUBREAK       :: 0x00000040;
 
- MF_UNHILITE        :: 0x00000000L;
- MF_HILITE          :: 0x00000080L;
+ MF_UNHILITE        :: 0x00000000;
+ MF_HILITE          :: 0x00000080;
 
 if (WINVER >= 0x0400) {
-    MF_DEFAULT         :: 0x00001000L;
+    MF_DEFAULT         :: 0x00001000;
 } /* WINVER >= 0x0400 */
-MF_SYSMENU         :: 0x00002000L;
-MF_HELP            :: 0x00004000L;
+MF_SYSMENU         :: 0x00002000;
+MF_HELP            :: 0x00004000;
 if (WINVER >= 0x0400) {
-    MF_RIGHTJUSTIFY    :: 0x00004000L;
+    MF_RIGHTJUSTIFY    :: 0x00004000;
 } /* WINVER >= 0x0400 */
 
-MF_MOUSESELECT     :: 0x00008000L;
+MF_MOUSESELECT     :: 0x00008000;
 if (WINVER >= 0x0400) {
-    MF_END             :: 0x00000080L;  /* Obsolete -- only used by old RES files */
+    MF_END             :: 0x00000080;  /* Obsolete -- only used by old RES files */
 } /* WINVER >= 0x0400 */
 
 
@@ -1276,13 +1276,13 @@ if (WINVER >= 0x0400) {
     MFT_MENUBARBREAK   :: MF_MENUBARBREAK;
     MFT_MENUBREAK      :: MF_MENUBREAK;
     MFT_OWNERDRAW      :: MF_OWNERDRAW;
-    MFT_RADIOCHECK     :: 0x00000200L;
+    MFT_RADIOCHECK     :: 0x00000200;
     MFT_SEPARATOR      :: MF_SEPARATOR;
-    MFT_RIGHTORDER     :: 0x00002000L;
+    MFT_RIGHTORDER     :: 0x00002000;
     MFT_RIGHTJUSTIFY   :: MF_RIGHTJUSTIFY;
 
 /* Menu flags for Add/Check/EnableMenuItem() */
-MFS_GRAYED         :: 0x00000003L;
+MFS_GRAYED         :: 0x00000003;
 MFS_DISABLED       :: MFS_GRAYED;
 MFS_CHECKED        :: MF_CHECKED;
 MFS_HILITE         :: MF_HILITE;
@@ -1292,7 +1292,7 @@ MFS_UNHILITE       :: MF_UNHILITE;
 MFS_DEFAULT        :: MF_DEFAULT;
 } /* WINVER >= 0x0400 */
 
-MF_END            :: 0x00000080L;
+MF_END            :: 0x00000080;
 /*
  * System Menu Command Values
  */
@@ -1476,21 +1476,21 @@ if !defined(IDTIMEOUT) {
 /*
  * Edit Control Styles
  */
- ES_LEFT            :: 0x0000L;
- ES_CENTER          :: 0x0001L;
- ES_RIGHT           :: 0x0002L;
- ES_MULTILINE       :: 0x0004L;
- ES_UPPERCASE       :: 0x0008L;
- ES_LOWERCASE       :: 0x0010L;
- ES_PASSWORD        :: 0x0020L;
- ES_AUTOVSCROLL     :: 0x0040L;
- ES_AUTOHSCROLL     :: 0x0080L;
- ES_NOHIDESEL       :: 0x0100L;
- ES_OEMCONVERT      :: 0x0400L;
- ES_READONLY        :: 0x0800L;
- ES_WANTRETURN      :: 0x1000L;
+ ES_LEFT            :: 0x0000;
+ ES_CENTER          :: 0x0001;
+ ES_RIGHT           :: 0x0002;
+ ES_MULTILINE       :: 0x0004;
+ ES_UPPERCASE       :: 0x0008;
+ ES_LOWERCASE       :: 0x0010;
+ ES_PASSWORD        :: 0x0020;
+ ES_AUTOVSCROLL     :: 0x0040;
+ ES_AUTOHSCROLL     :: 0x0080;
+ ES_NOHIDESEL       :: 0x0100;
+ ES_OEMCONVERT      :: 0x0400;
+ ES_READONLY        :: 0x0800;
+ ES_WANTRETURN      :: 0x1000;
 if (WINVER >= 0x0400) {
-    ES_NUMBER          :: 0x2000L;
+    ES_NUMBER          :: 0x2000;
 } /* WINVER >= 0x0400 */
 
 
@@ -1551,34 +1551,34 @@ if (WINVER >= 0x0604) {
 /*
  * Button Control Styles
  */
- BS_PUSHBUTTON      :: 0x00000000L;
- BS_DEFPUSHBUTTON   :: 0x00000001L;
- BS_CHECKBOX        :: 0x00000002L;
- BS_AUTOCHECKBOX    :: 0x00000003L;
- BS_RADIOBUTTON     :: 0x00000004L;
- BS_3STATE          :: 0x00000005L;
- BS_AUTO3STATE      :: 0x00000006L;
- BS_GROUPBOX        :: 0x00000007L;
- BS_USERBUTTON      :: 0x00000008L;
- BS_AUTORADIOBUTTON :: 0x00000009L;
- BS_PUSHBOX         :: 0x0000000AL;
- BS_OWNERDRAW       :: 0x0000000BL;
- BS_TYPEMASK        :: 0x0000000FL;
- BS_LEFTTEXT        :: 0x00000020L;
+ BS_PUSHBUTTON      :: 0x00000000;
+ BS_DEFPUSHBUTTON   :: 0x00000001;
+ BS_CHECKBOX        :: 0x00000002;
+ BS_AUTOCHECKBOX    :: 0x00000003;
+ BS_RADIOBUTTON     :: 0x00000004;
+ BS_3STATE          :: 0x00000005;
+ BS_AUTO3STATE      :: 0x00000006;
+ BS_GROUPBOX        :: 0x00000007;
+ BS_USERBUTTON      :: 0x00000008;
+ BS_AUTORADIOBUTTON :: 0x00000009;
+ BS_PUSHBOX         :: 0x0000000A;
+ BS_OWNERDRAW       :: 0x0000000B;
+ BS_TYPEMASK        :: 0x0000000F;
+ BS_LEFTTEXT        :: 0x00000020;
 if (WINVER >= 0x0400) {
-    BS_TEXT            :: 0x00000000L;
-    BS_ICON            :: 0x00000040L;
-    BS_BITMAP          :: 0x00000080L;
-    BS_LEFT            :: 0x00000100L;
-    BS_RIGHT           :: 0x00000200L;
-    BS_CENTER          :: 0x00000300L;
-    BS_TOP             :: 0x00000400L;
-    BS_BOTTOM          :: 0x00000800L;
-    BS_VCENTER         :: 0x00000C00L;
-    BS_PUSHLIKE        :: 0x00001000L;
-    BS_MULTILINE       :: 0x00002000L;
-    BS_NOTIFY          :: 0x00004000L;
-    BS_FLAT            :: 0x00008000L;
+    BS_TEXT            :: 0x00000000;
+    BS_ICON            :: 0x00000040;
+    BS_BITMAP          :: 0x00000080;
+    BS_LEFT            :: 0x00000100;
+    BS_RIGHT           :: 0x00000200;
+    BS_CENTER          :: 0x00000300;
+    BS_TOP             :: 0x00000400;
+    BS_BOTTOM          :: 0x00000800;
+    BS_VCENTER         :: 0x00000C00;
+    BS_PUSHLIKE        :: 0x00001000;
+    BS_MULTILINE       :: 0x00002000;
+    BS_NOTIFY          :: 0x00004000;
+    BS_FLAT            :: 0x00008000;
     BS_RIGHTBUTTON     :: BS_LEFTTEXT;
 } /* WINVER >= 0x0400 */
 
@@ -1627,43 +1627,43 @@ if (WINVER >= 0x0400) {
 /*
  * Static Control Constants
  */
- SS_LEFT            :: 0x00000000L;
- SS_CENTER          :: 0x00000001L;
- SS_RIGHT           :: 0x00000002L;
- SS_ICON            :: 0x00000003L;
- SS_BLACKRECT       :: 0x00000004L;
- SS_GRAYRECT        :: 0x00000005L;
- SS_WHITERECT       :: 0x00000006L;
- SS_BLACKFRAME      :: 0x00000007L;
- SS_GRAYFRAME       :: 0x00000008L;
- SS_WHITEFRAME      :: 0x00000009L;
- SS_USERITEM        :: 0x0000000AL;
- SS_SIMPLE          :: 0x0000000BL;
- SS_LEFTNOWORDWRAP  :: 0x0000000CL;
+ SS_LEFT            :: 0x00000000;
+ SS_CENTER          :: 0x00000001;
+ SS_RIGHT           :: 0x00000002;
+ SS_ICON            :: 0x00000003;
+ SS_BLACKRECT       :: 0x00000004;
+ SS_GRAYRECT        :: 0x00000005;
+ SS_WHITERECT       :: 0x00000006;
+ SS_BLACKFRAME      :: 0x00000007;
+ SS_GRAYFRAME       :: 0x00000008;
+ SS_WHITEFRAME      :: 0x00000009;
+ SS_USERITEM        :: 0x0000000A;
+ SS_SIMPLE          :: 0x0000000B;
+ SS_LEFTNOWORDWRAP  :: 0x0000000C;
 if (WINVER >= 0x0400) {
-    SS_OWNERDRAW       :: 0x0000000DL;
-    SS_BITMAP          :: 0x0000000EL;
-    SS_ENHMETAFILE     :: 0x0000000FL;
-    SS_ETCHEDHORZ      :: 0x00000010L;
-    SS_ETCHEDVERT      :: 0x00000011L;
-    SS_ETCHEDFRAME     :: 0x00000012L;
-    SS_TYPEMASK        :: 0x0000001FL;
+    SS_OWNERDRAW       :: 0x0000000D;
+    SS_BITMAP          :: 0x0000000E;
+    SS_ENHMETAFILE     :: 0x0000000F;
+    SS_ETCHEDHORZ      :: 0x00000010;
+    SS_ETCHEDVERT      :: 0x00000011;
+    SS_ETCHEDFRAME     :: 0x00000012;
+    SS_TYPEMASK        :: 0x0000001F;
 } /* WINVER >= 0x0400 */
 if (WINVER >= 0x0501) {
-    SS_REALSIZECONTROL :: 0x00000040L;
+    SS_REALSIZECONTROL :: 0x00000040;
 } /* WINVER >= 0x0501 */
-SS_NOPREFIX        :: 0x00000080L; /* Don't do "&" character translation */
+SS_NOPREFIX        :: 0x00000080; /* Don't do "&" character translation */
 if (WINVER >= 0x0400) {
-    SS_NOTIFY          :: 0x00000100L;
-    SS_CENTERIMAGE     :: 0x00000200L;
-    SS_RIGHTJUST       :: 0x00000400L;
-    SS_REALSIZEIMAGE   :: 0x00000800L;
-    SS_SUNKEN          :: 0x00001000L;
-    SS_EDITCONTROL     :: 0x00002000L;
-    SS_ENDELLIPSIS     :: 0x00004000L;
-    SS_PATHELLIPSIS    :: 0x00008000L;
-    SS_WORDELLIPSIS    :: 0x0000C000L;
-    SS_ELLIPSISMASK    :: 0x0000C000L;
+    SS_NOTIFY          :: 0x00000100;
+    SS_CENTERIMAGE     :: 0x00000200;
+    SS_RIGHTJUST       :: 0x00000400;
+    SS_REALSIZEIMAGE   :: 0x00000800;
+    SS_SUNKEN          :: 0x00001000;
+    SS_EDITCONTROL     :: 0x00002000;
+    SS_ENDELLIPSIS     :: 0x00004000;
+    SS_PATHELLIPSIS    :: 0x00008000;
+    SS_WORDELLIPSIS    :: 0x0000C000;
+    SS_ELLIPSISMASK    :: 0x0000C000;
 } /* WINVER >= 0x0400 */
 
 
@@ -1671,53 +1671,53 @@ if (WINVER >= 0x0400) {
 /*
  * Dialog Styles
  */
- DS_ABSALIGN        :: 0x01L;
- DS_SYSMODAL        :: 0x02L;
- DS_LOCALEDIT       :: 0x20L;   /* Edit items get Local storage. */
- DS_SETFONT         :: 0x40L;   /* User specified font for Dlg controls */
- DS_MODALFRAME      :: 0x80L;   /* Can be combined with WS_CAPTION  */
- DS_NOIDLEMSG       :: 0x100L;  /* WM_ENTERIDLE message will not be sent */
- DS_SETFOREGROUND   :: 0x200L;  /* not in win3.1 */
+ DS_ABSALIGN        :: 0x01;
+ DS_SYSMODAL        :: 0x02;
+ DS_LOCALEDIT       :: 0x20;   /* Edit items get Local storage. */
+ DS_SETFONT         :: 0x40;   /* User specified font for Dlg controls */
+ DS_MODALFRAME      :: 0x80;   /* Can be combined with WS_CAPTION  */
+ DS_NOIDLEMSG       :: 0x100;  /* WM_ENTERIDLE message will not be sent */
+ DS_SETFOREGROUND   :: 0x200;  /* not in win3.1 */
 
 
 if (WINVER >= 0x0400) {
-    DS_3DLOOK          :: 0x0004L;
-    DS_FIXEDSYS        :: 0x0008L;
-    DS_NOFAILCREATE    :: 0x0010L;
-    DS_CONTROL         :: 0x0400L;
-    DS_CENTER          :: 0x0800L;
-    DS_CENTERMOUSE     :: 0x1000L;
-    DS_CONTEXTHELP     :: 0x2000L;
+    DS_3DLOOK          :: 0x0004;
+    DS_FIXEDSYS        :: 0x0008;
+    DS_NOFAILCREATE    :: 0x0010;
+    DS_CONTROL         :: 0x0400;
+    DS_CENTER          :: 0x0800;
+    DS_CENTERMOUSE     :: 0x1000;
+    DS_CONTEXTHELP     :: 0x2000;
 
     DS_SHELLFONT       :: (DS_SETFONT | DS_FIXEDSYS);
 } /* WINVER >= 0x0400 */
 
 if defined(_WIN32_WCE) && (_WIN32_WCE >= 0x0500) {
-DS_USEPIXELS       :: 0x8000L;
+DS_USEPIXELS       :: 0x8000;
 }
 
 
 /*
  * Listbox Styles
  */
- LBS_NOTIFY           :: 0x0001L;
- LBS_SORT             :: 0x0002L;
- LBS_NOREDRAW         :: 0x0004L;
- LBS_MULTIPLESEL      :: 0x0008L;
- LBS_OWNERDRAWFIXED   :: 0x0010L;
- LBS_OWNERDRAWVARIABLE:: 0x0020L;
- LBS_HASSTRINGS       :: 0x0040L;
- LBS_USETABSTOPS      :: 0x0080L;
- LBS_NOINTEGRALHEIGHT :: 0x0100L;
- LBS_MULTICOLUMN      :: 0x0200L;
- LBS_WANTKEYBOARDINPUT:: 0x0400L;
- LBS_EXTENDEDSEL      :: 0x0800L;
- LBS_DISABLENOSCROLL  :: 0x1000L;
- LBS_NODATA           :: 0x2000L;
+ LBS_NOTIFY           :: 0x0001;
+ LBS_SORT             :: 0x0002;
+ LBS_NOREDRAW         :: 0x0004;
+ LBS_MULTIPLESEL      :: 0x0008;
+ LBS_OWNERDRAWFIXED   :: 0x0010;
+ LBS_OWNERDRAWVARIABLE:: 0x0020;
+ LBS_HASSTRINGS       :: 0x0040;
+ LBS_USETABSTOPS      :: 0x0080;
+ LBS_NOINTEGRALHEIGHT :: 0x0100;
+ LBS_MULTICOLUMN      :: 0x0200;
+ LBS_WANTKEYBOARDINPUT:: 0x0400;
+ LBS_EXTENDEDSEL      :: 0x0800;
+ LBS_DISABLENOSCROLL  :: 0x1000;
+ LBS_NODATA           :: 0x2000;
 if (WINVER >= 0x0400) {
-    LBS_NOSEL            :: 0x4000L;
+    LBS_NOSEL            :: 0x4000;
 } /* WINVER >= 0x0400 */
-LBS_COMBOBOX         :: 0x8000L;
+LBS_COMBOBOX         :: 0x8000;
 
 LBS_STANDARD         :: (LBS_NOTIFY | LBS_SORT | WS_VSCROLL | WS_BORDER);
 
@@ -1725,57 +1725,57 @@ LBS_STANDARD         :: (LBS_NOTIFY | LBS_SORT | WS_VSCROLL | WS_BORDER);
 /*
  * Combo Box styles
  */
- CBS_SIMPLE           :: 0x0001L;
- CBS_DROPDOWN         :: 0x0002L;
- CBS_DROPDOWNLIST     :: 0x0003L;
- CBS_OWNERDRAWFIXED   :: 0x0010L;
- CBS_OWNERDRAWVARIABLE:: 0x0020L;
- CBS_AUTOHSCROLL      :: 0x0040L;
- CBS_OEMCONVERT       :: 0x0080L;
- CBS_SORT             :: 0x0100L;
- CBS_HASSTRINGS       :: 0x0200L;
- CBS_NOINTEGRALHEIGHT :: 0x0400L;
- CBS_DISABLENOSCROLL  :: 0x0800L;
+ CBS_SIMPLE           :: 0x0001;
+ CBS_DROPDOWN         :: 0x0002;
+ CBS_DROPDOWNLIST     :: 0x0003;
+ CBS_OWNERDRAWFIXED   :: 0x0010;
+ CBS_OWNERDRAWVARIABLE:: 0x0020;
+ CBS_AUTOHSCROLL      :: 0x0040;
+ CBS_OEMCONVERT       :: 0x0080;
+ CBS_SORT             :: 0x0100;
+ CBS_HASSTRINGS       :: 0x0200;
+ CBS_NOINTEGRALHEIGHT :: 0x0400;
+ CBS_DISABLENOSCROLL  :: 0x0800;
 if (WINVER >= 0x0400) {
-    CBS_UPPERCASE        :: 0x2000L;
-    CBS_LOWERCASE        :: 0x4000L;
+    CBS_UPPERCASE        :: 0x2000;
+    CBS_LOWERCASE        :: 0x4000;
 } /* WINVER >= 0x0400 */
 
 
 /*
  * Scroll Bar Styles
  */
- SBS_HORZ                   :: 0x0000L;
- SBS_VERT                   :: 0x0001L;
- SBS_TOPALIGN               :: 0x0002L;
- SBS_LEFTALIGN              :: 0x0002L;
- SBS_BOTTOMALIGN            :: 0x0004L;
- SBS_RIGHTALIGN             :: 0x0004L;
- SBS_SIZEBOXTOPLEFTALIGN    :: 0x0002L;
- SBS_SIZEBOXBOTTOMRIGHTALIGN:: 0x0004L;
- SBS_SIZEBOX                :: 0x0008L;
+ SBS_HORZ                   :: 0x0000;
+ SBS_VERT                   :: 0x0001;
+ SBS_TOPALIGN               :: 0x0002;
+ SBS_LEFTALIGN              :: 0x0002;
+ SBS_BOTTOMALIGN            :: 0x0004;
+ SBS_RIGHTALIGN             :: 0x0004;
+ SBS_SIZEBOXTOPLEFTALIGN    :: 0x0002;
+ SBS_SIZEBOXBOTTOMRIGHTALIGN:: 0x0004;
+ SBS_SIZEBOX                :: 0x0008;
 if (WINVER >= 0x0400) {
-    SBS_SIZEGRIP               :: 0x0010L;
+    SBS_SIZEGRIP               :: 0x0010;
 } /* WINVER >= 0x0400 */
 
 
 /*
  * Commands to pass to WinHelp()
  */
- HELP_CONTEXT     :: 0x0001L;  /* Display topic in ulTopic */
- HELP_QUIT        :: 0x0002L;  /* Terminate help */
- HELP_INDEX       :: 0x0003L;  /* Display index */
- HELP_CONTENTS    :: 0x0003L;
- HELP_HELPONHELP  :: 0x0004L;  /* Display help on using help */
- HELP_SETINDEX    :: 0x0005L;  /* Set current Index for multi index help */
- HELP_SETCONTENTS :: 0x0005L;
- HELP_CONTEXTPOPUP:: 0x0008L;
- HELP_FORCEFILE   :: 0x0009L;
- HELP_KEY         :: 0x0101L;  /* Display topic for keyword in offabData */
- HELP_COMMAND     :: 0x0102L;
- HELP_PARTIALKEY  :: 0x0105L;
- HELP_MULTIKEY    :: 0x0201L;
- HELP_SETWINPOS   :: 0x0203L;
+ HELP_CONTEXT     :: 0x0001;  /* Display topic in ulTopic */
+ HELP_QUIT        :: 0x0002;  /* Terminate help */
+ HELP_INDEX       :: 0x0003;  /* Display index */
+ HELP_CONTENTS    :: 0x0003;
+ HELP_HELPONHELP  :: 0x0004;  /* Display help on using help */
+ HELP_SETINDEX    :: 0x0005;  /* Set current Index for multi index help */
+ HELP_SETCONTENTS :: 0x0005;
+ HELP_CONTEXTPOPUP:: 0x0008;
+ HELP_FORCEFILE   :: 0x0009;
+ HELP_KEY         :: 0x0101;  /* Display topic for keyword in offabData */
+ HELP_COMMAND     :: 0x0102;
+ HELP_PARTIALKEY  :: 0x0105;
+ HELP_MULTIKEY    :: 0x0201;
+ HELP_SETWINPOS   :: 0x0203;
 if (WINVER >= 0x0400) {
     HELP_CONTEXTMENU :: 0x000a;
     HELP_FINDER      :: 0x000b;
