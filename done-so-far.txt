@@ -21,9 +21,9 @@ windows.jai
                         |
                         -----------------------------> winver.jai ✅
                                                        |
-                                                       -> specstrings.jai -
+                                                       -> specstrings.jai *
                                                        |
-                                                       -> verrsrc.jai -
+                                                       -> verrsrc.jai ✅
 
 
 

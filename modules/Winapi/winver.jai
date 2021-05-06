@@ -12,7 +12,7 @@
 
 #load "winapifamily.jai";
 
-#load "specstrings.jai";
+// #load "specstrings.jai"; // make sense of SAL annotations first
 #load "verrsrc.jai";
 
 #run {
