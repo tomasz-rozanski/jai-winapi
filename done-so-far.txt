@@ -2,36 +2,86 @@ windows.jai
 |
 ├---------------------> winapifamily.jai ✅
 |                       |
-|                       └> winpackagefamily.jai ✅
+|                       └-> winpackagefamily.jai ✅
 |
-├> sdkddkver.jai ✅
+├-> sdkddkver.jai ✅
 |
+├---------------------> winresrc.jai *
+|                       |
+|                       ├-> winuser_rh.jai ✅
+|                       |
+|                       ├-> commctrl_rh.jai ✅
+|                       |
+|                       ├-> dde_rh.jai ✅
+|                       |
+|                       ├-> winnt_rh.jai ✅
+|                       |
+|                       ├-> dlgs.jai ✅
+|                       |
+|                       └----------------------------> winver.jai ✅
+|                                                      |
+|                                                      ├-> specstrings.jai *
+|                                                      |
+|                                                      └-> verrsrc.jai ✅
 |
-└---------------------> winresrc.jai *
-                        |
-                        ├-> winuser_rh.jai ✅
-                        |
-                        ├-> commctrl_rh.jai ✅
-                        |
-                        ├-> dde_rh.jai ✅
-                        |
-                        ├-> winnt_rh.jai ✅
-                        |
-                        ├-> dlgs.jai ✅
-                        |
-                        └----------------------------> winver.jai ✅
-                                                       |
-                                                       ├-> specstrings.jai *
-                                                       |
-                                                       └-> verrsrc.jai ✅
+├---------------------> excpt.jai *!
+|                       |
+|                       └----------------------------> vcruntime.jai !
+|                                                      |
+|                                                      ├------------------------------> sal.jai !
+|                                                      |                                |
+|                                                      |                                ├-> sourceannotations.jai
+|                                                      |                                |
+|                                                      |                                └-> concurrencysal.jai
+|                                                      |                                 
+|                                                      └-> vadefs.jai
+|
+├-> stdarg.jai !
+|
+├---------------------> windef.jai *
+|                       |
+|                       ├-> minwindef.jai *
+|                       |
+|                       └-> winnt.jai
+|
+├-> 
 
 
-
-
-                        windef.jai *
+winbas.jai
+wingdi.jai
+winuser.jai
+winnls.jai
+wincon.jai
+winver.jai
+winreg.jai
+winnetwk.jai
+cderr.jai
+dde.jai
+ddeml.jai
+dlgs.jai
+lzexpand.jai
+mmsystem.jai
+nb30.jai
+rpc.jai
+shellapi.jai
+winperf.jai
+winsock.jai
+wincrypt.jai
+winefs.jai
+winscard.jai
+winspool.jai
+ole.jai
+ole2.jai
+commdlg.jai
+stralign.jai
+winwlm.jai
+ole2.jai
+winsvc.jai
+mcx.jai
+imm.jai
 
 
 legend:
 '*' - in progress
-'-' - nothing done
 '✅' - completed
+'!' - do we even need this one?

@@ -1,91 +1,83 @@
-/****************************************************************************
-*                                                                           *
-* minwindef.h -- Basic Windows Type Definitions for minwin partition        *
-*                                                                           *
-* Copyright (c) Microsoft Corporation. All rights reserved.                 *
-*                                                                           *
-****************************************************************************/
+// 
+// Module Name:
+//     minwindef.jai
+// 
+// Abstract:
+//     Basic Windows Type Definitions for minwin partition
+// 
 
+#assert(OS == .WINDOWS);
 
-#ifndef _MINWINDEF_
-#define _MINWINDEF_
-#pragma once
+#import "Basic";
 
-#include <specstrings.h>
+// #load "specstrings.jai"; // probably not needed
 
-#include <winapifamily.h>
+#load "winapifamily.jai";
 
-#pragma region Application Family or OneCore Family or Games Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
+if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) {
 
-#ifndef NO_STRICT
-#ifndef STRICT
-#define STRICT 1
-#endif
-#endif /* NO_STRICT */
+    if !defined(NO_STRICT) {
+        if !defined(STRICT) {
+            STRICT :: 1;
+        }
+    } /* NO_STRICT */
 
 // Win32 defines _WIN32 automatically,
 // but Macintosh doesn't, so if we are using
 // Win32 Functions, we must do it here
 
-#ifdef _MAC
-#ifndef _WIN32
-#define _WIN32
-#endif
-#endif //_MAC
+if defined(_MAC) {
+    if !defined(_WIN32) {
+        define(*_WIN32);
+    }
+} //_MAC
 
-#ifndef WIN32
-#define WIN32
-#endif
-
-#ifdef __cplusplus
-extern "C" {
-#endif
+if !defined(WIN32) {
+define(*WIN32);
+}
 
 /*
  * BASETYPES is defined in ntdef.h if these types are already defined
  */
 
-#ifndef BASETYPES
-#define BASETYPES
-typedef unsigned long ULONG;
-typedef ULONG *PULONG;
-typedef unsigned short USHORT;
-typedef USHORT *PUSHORT;
-typedef unsigned char UCHAR;
-typedef UCHAR *PUCHAR;
-typedef _Null_terminated_ char *PSZ;
-#endif  /* !BASETYPES */
+if !defined(BASETYPES) {
+define(*BASETYPES);
+ULONG :: u32;
+PULONG :: *ULONG;
+USHORT :: u16;
+PUSHORT :: *USHORT;
+UCHAR :: u8;
+PUCHAR :: *UCHAR;
+// typedef _Null_terminated_ char *PSZ; // @is_this_needed
+}  /* !BASETYPES */
 
-#define MAX_PATH          260
+MAX_PATH         :: 260;
 
-#ifndef NULL
-#ifdef __cplusplus
-#define NULL    0
-#else
-#define NULL    ((void *)0)
-#endif
-#endif
+if !defined(NULL) {
+    NULL :: null;
+}
 
-#ifndef FALSE
-#define FALSE               0
-#endif
+if !defined(FALSE) {
+    FALSE              :: 0;
+}
 
-#ifndef TRUE
-#define TRUE                1
-#endif
+if !defined(TRUE) {
+    TRUE               :: 1;
+}
 
-#ifndef IN
-#define IN
-#endif
+if !defined(IN) {
+define(*IN);
+}
 
-#ifndef OUT
-#define OUT
-#endif
+if !defined(OUT) {
+define(*OUT);
+}
 
-#ifndef OPTIONAL
-#define OPTIONAL
-#endif
+if !defined(OPTIONAL) {
+define(*OPTIONAL);
+}
+
+/* Probably not needed
 
 #undef far
 #undef near
@@ -98,19 +90,19 @@ typedef _Null_terminated_ char *PSZ;
 #define pascal __stdcall
 #else
 #define pascal
-#endif
+}
 
-#if defined(DOSWIN32) || defined(_MAC)
+if defined(DOSWIN32) || defined(_MAC) {
 #define cdecl _cdecl
-#ifndef CDECL
+if !defined(CDECL) {
 #define CDECL _cdecl
-#endif
+}
 #else
 #define cdecl
-#ifndef CDECL
+if !defined(CDECL) {
 #define CDECL
-#endif
-#endif
+}
+}
 
 #ifdef _MAC
 #define CALLBACK    PASCAL
@@ -122,7 +114,7 @@ typedef _Null_terminated_ char *PSZ;
 #define PASCAL      __pascal
 #else
 #define PASCAL
-#endif
+}
 #elif (_MSC_VER >= 800) || defined(_STDCALL_SUPPORTED)
 #define CALLBACK    __stdcall
 #define WINAPI      __stdcall
@@ -137,13 +129,13 @@ typedef _Null_terminated_ char *PSZ;
 #define APIENTRY    WINAPI
 #define APIPRIVATE
 #define PASCAL      pascal
-#endif
+}
 
 #ifndef _M_CEE_PURE
 #ifndef WINAPI_INLINE
 #define WINAPI_INLINE  WINAPI
-#endif
-#endif
+}
+}
 
 #undef FAR
 #undef  NEAR
@@ -151,73 +143,85 @@ typedef _Null_terminated_ char *PSZ;
 #define NEAR                near
 #ifndef CONST
 #define CONST               const
-#endif
+}
+*/ @probably_not_needed
 
-typedef unsigned long       DWORD;
-typedef int                 BOOL;
-typedef unsigned char       BYTE;
-typedef unsigned short      WORD;
-typedef float               FLOAT;
-typedef FLOAT               *PFLOAT;
-typedef BOOL near           *PBOOL;
-typedef BOOL far            *LPBOOL;
-typedef BYTE near           *PBYTE;
-typedef BYTE far            *LPBYTE;
-typedef int near            *PINT;
-typedef int far             *LPINT;
-typedef WORD near           *PWORD;
-typedef WORD far            *LPWORD;
-typedef long far            *LPLONG;
-typedef DWORD near          *PDWORD;
-typedef DWORD far           *LPDWORD;
-typedef void far            *LPVOID;
-typedef CONST void far      *LPCVOID;
+DWORD :: u32;
+BOOL :: s32;
+BYTE :: u8;
+WORD :: u16;
+FLOAT :: float;
+PFLOAT :: *FLOAT;
+PBOOL :: *BOOL;
+LPBOOL :: *BOOL;
+PBYTE :: *BYTE;
+LPBYTE :: *BYTE;
+PINT :: *int;
+LPINT :: *int;
+PWORD :: *WORD;
+LPWORD :: *WORD;
+LPLONG :: *s32;
+PDWORD :: *DWORD;
+LPDWORD :: *DWORD;
+LPVOID :: *void;
+LPCVOID :: *void;
 
-typedef int                 INT;
-typedef unsigned int        UINT;
-typedef unsigned int        *PUINT;
+INT :: s32;
+UINT :: u32;
+PUINT :: *u32;
 
 
-#ifndef NT_INCLUDED
-#include <winnt.h>
-#endif /* NT_INCLUDED */
+if !defined(NT_INCLUDED) {
+#load "winnt.jai";
+} /* NT_INCLUDED */
 
 /* Types use for passing & returning polymorphic values */
-typedef UINT_PTR            WPARAM;
-typedef LONG_PTR            LPARAM;
-typedef LONG_PTR            LRESULT;
+WPARAM :: UINT_PTR;
+LPARAM :: LONG_PTR;
+LRESULT :: LONG_PTR
 
-#ifndef NOMINMAX
+MAKEWORD :: (low_byte: BYTE, high_byte: BYTE) -> WORD {
+    result :=  cast(WORD) low_byte | ((cast(WORD) high_byte) << 8);
+    return result;
+}
 
-#ifndef max
-#define max(a,b)            (((a) > (b)) ? (a) : (b))
-#endif
+MAKELONG :: (low_word: WORD, high_word: WORD) -> LONG {
+    result := cast(LONG) low_word | ((cast(LONG) high_word) << 16);
+    return result;
+}
 
-#ifndef min
-#define min(a,b)            (((a) < (b)) ? (a) : (b))
-#endif
+LOWORD :: (l: LONG) -> WORD {
+    result: WORD = xx (l & 0xffff);
+    return result;
+}
 
-#endif  /* NOMINMAX */
+HIWORD :: (l: LONG) -> WORD {
+    result: WORD = xx ((l >> 16)& 0xffff);
+    return result;
+}
 
-#define MAKEWORD(a, b)      ((WORD)(((BYTE)(((DWORD_PTR)(a)) & 0xff)) | ((WORD)((BYTE)(((DWORD_PTR)(b)) & 0xff))) << 8))
-#define MAKELONG(a, b)      ((LONG)(((WORD)(((DWORD_PTR)(a)) & 0xffff)) | ((DWORD)((WORD)(((DWORD_PTR)(b)) & 0xffff))) << 16))
-#define LOWORD(l)           ((WORD)(((DWORD_PTR)(l)) & 0xffff))
-#define HIWORD(l)           ((WORD)((((DWORD_PTR)(l)) >> 16) & 0xffff))
-#define LOBYTE(w)           ((BYTE)(((DWORD_PTR)(w)) & 0xff))
-#define HIBYTE(w)           ((BYTE)((((DWORD_PTR)(w)) >> 8) & 0xff))
+LOBYTE :: (w: WORD) -> BYTE {
+    result: BYTE = xx (w & 0xff);
+    return result;
+}
 
-typedef HANDLE NEAR         *SPHANDLE;
-typedef HANDLE FAR          *LPHANDLE;
-typedef HANDLE              HGLOBAL;
-typedef HANDLE              HLOCAL;
-typedef HANDLE              GLOBALHANDLE;
-typedef HANDLE              LOCALHANDLE;
+HIBYTE :: (w: WORD) -> BYTE {
+    result: BYTE = xx ((w >> 8) & 0xff);
+    return result;
+}
+
+SPHANDLE :: *HANDLE;
+LPHANDLE :: HANDLE;
+HGLOBAL :: HANDLE;
+HLOCAL :: HANDLE;
+GLOBALHANDLE :: HANDLE;
+LOCALHANDLE :: HANDLE;
 
 #ifndef _MANAGED
 #if _MSC_VER >= 1200
 #pragma warning(push)
 #pragma warning(disable:4255) // () treated as (void)
-#endif
+}
 #ifndef _MAC
 #ifdef _WIN64
 typedef INT_PTR (FAR WINAPI *FARPROC)();
@@ -227,20 +231,20 @@ typedef INT_PTR (WINAPI *PROC)();
 typedef int (FAR WINAPI *FARPROC)();
 typedef int (NEAR WINAPI *NEARPROC)();
 typedef int (WINAPI *PROC)();
-#endif  // _WIN64
+}  // _WIN64
 #else
 typedef int (CALLBACK *FARPROC)();
 typedef int (CALLBACK *NEARPROC)();
 typedef int (CALLBACK *PROC)();
-#endif
+}
 #if _MSC_VER >= 1200
 #pragma warning(pop)
-#endif
+}
 #else
 typedef INT_PTR (WINAPI *FARPROC)(void);
 typedef INT_PTR (WINAPI *NEARPROC)(void);
 typedef INT_PTR (WINAPI *PROC)(void);
-#endif
+}
 
 typedef WORD                ATOM;   //BUGBUG - might want to remove this from minwin
 
@@ -262,7 +266,7 @@ DECLARE_HANDLE(HKL);
 typedef int HFILE;
 #else
 typedef short HFILE;
-#endif
+}
 
 //
 //  File System time stamps are represented with the following structure:
@@ -276,10 +280,8 @@ typedef struct _FILETIME {
 
 #ifdef __cplusplus
 }
-#endif
+}
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
-#pragma endregion
+} /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
 
-#endif // _MINWINDEF_
 
